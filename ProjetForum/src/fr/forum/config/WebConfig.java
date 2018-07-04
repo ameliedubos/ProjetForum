@@ -17,16 +17,14 @@ import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module.Feature;
 
 @Configuration
-@Import(value = { AppConfig.class})//, SecurityConfig.class })
+@Import(value = { AppConfig.class }) // , SecurityConfig.class })
 @EnableWebMvc
-@ComponentScan(basePackages = { "fr.forum.controllers",
-	"fr.forum.restcontrollers" })
+@ComponentScan(basePackages = { "fr.forum.controllers" })
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	registry.addResourceHandler("/static/**")
-		.addResourceLocations("/static/");
+	registry.addResourceHandler("/static/**").addResourceLocations("/static/");
     }
 
     @Bean
@@ -75,14 +73,12 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void configureMessageConverters(
-	    List<HttpMessageConverter<?>> converters) {
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 	Hibernate5Module module = new Hibernate5Module();
 	module.disable(Feature.USE_TRANSIENT_ANNOTATION);
 	module.enable(Feature.FORCE_LAZY_LOADING);
 	Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
 	builder.modulesToInstall(module);
-	converters
-		.add(new MappingJackson2HttpMessageConverter(builder.build()));
+	converters.add(new MappingJackson2HttpMessageConverter(builder.build()));
     }
 }
