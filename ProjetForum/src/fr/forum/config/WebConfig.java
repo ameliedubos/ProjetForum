@@ -19,7 +19,7 @@ import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module.Feature;
 @Configuration
 @Import(value = { AppConfig.class }) // , SecurityConfig.class })
 @EnableWebMvc
-@ComponentScan(basePackages = { "fr.forum.controllers", "fr.forum.restcontrollers" })
+@ComponentScan(basePackages = { "fr.forum.controllers" })
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
