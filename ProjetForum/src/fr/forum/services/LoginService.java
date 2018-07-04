@@ -1,3 +1,4 @@
+package fr.forum.services;
 //package fr.formation.services;
 //
 //import org.springframework.beans.factory.annotation.Autowired;

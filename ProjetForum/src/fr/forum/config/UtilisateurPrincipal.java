@@ -1,3 +1,4 @@
+package fr.forum.config;
 //package fr.formation.config;
 //
 //import java.util.*;

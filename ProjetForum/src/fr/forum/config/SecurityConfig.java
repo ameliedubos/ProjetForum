@@ -1,3 +1,4 @@
+package fr.forum.config;
 //package fr.formation.config;
 //
 //import org.springframework.beans.factory.annotation.Autowired;

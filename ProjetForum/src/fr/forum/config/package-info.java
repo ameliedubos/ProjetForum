@@ -1,4 +1,4 @@
 /**
  * This package contains Spring configuration classes.
  */
-package fr.formation.config;
+package fr.forum.config;
