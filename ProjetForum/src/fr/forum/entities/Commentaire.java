@@ -1,40 +1,53 @@
 package fr.forum.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Commentaire {
-	private Long id;
-	private String texte;
-	private Utilisateur utilisateur;
 
-	public Commentaire() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String texte;
 
-	}
+    @ManyToOne
+    private Utilisateur utilisateur;
 
-	public Long getId() {
-		return id;
-	}
+    public Commentaire() {
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    }
 
-	public String getTexte() {
-		return texte;
-	}
+    public Long getId() {
+	return id;
+    }
 
-	public void setTexte(String texte) {
-		this.texte = texte;
-	}
+    public void setId(Long id) {
+	this.id = id;
+    }
 
-	public Utilisateur getUtilisateur() {
-		return utilisateur;
-	}
+    public String getTexte() {
+	return texte;
+    }
 
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
-	}
+    public void setTexte(String texte) {
+	this.texte = texte;
+    }
 
-	public String toString() {
-		return "Commentaire [id=" + id + ", texte=" + texte + ", utilisateur=" + utilisateur + "]";
-	}
+    public Utilisateur getUtilisateur() {
+	return utilisateur;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+	this.utilisateur = utilisateur;
+    }
+
+    @Override
+    public String toString() {
+	return "Commentaire [id=" + id + ", texte=" + texte + ", utilisateur=" + utilisateur + "]";
+    }
 
 }
